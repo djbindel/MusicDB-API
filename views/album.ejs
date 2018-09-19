@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <td>
+      <img src="<%= album.imgUrl %>" height="<%= sideLength %>" width="<%= sideLength %>">
+    </td>
+    <td>
+      <div><%= album.artist %></div>
+      <div><b><%= album.title %></b></div>
+      <div><%= album.year %></div>
+      <div><%= genres.join(', ') %></div>
+      <table>
+        <% for (trackNumber in tracklist) { %>
+          <tr>
+            <td style="text-align: right"><%= trackNumber %></td>
+            <td><%= tracklist[trackNumber].track.title %></td>
+            <td><%= tracklist[trackNumber].genres.join(', ') %></td>
+          </tr>
+        <% } %>
+      </table>
+    </td>
+  </tr>
+</table>
