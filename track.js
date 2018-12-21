@@ -2,13 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    trackId: {type: Number, required: true},
+    trackId: {type: Number, required: true, unique: true},
     title: {type: String, required: true},
-    genreTags: [{
-        genreId: {type: Number, required: true},
-        upvotes: {type: Number, required: true},
-        downvotes: {type: Number, required: true}
-    }],
+    genreId: {type: Number, required: false},
     score: {type: Number, required: true}
 }, { strict: 'throw' });
 

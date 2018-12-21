@@ -6,14 +6,13 @@
     <td>
       <div><%= album.artist %></div>
       <div><b><%= album.title %></b></div>
-      <div><%= album.year %></div>
-      <div><%= genres.join(', ') %></div>
+      <div><%= genre.name %>, <%= album.year %></div>
       <table>
         <% for (trackNumber in tracklist) { %>
           <tr>
             <td style="text-align: right"><%= trackNumber %></td>
             <td><%= tracklist[trackNumber].track.title %></td>
-            <td><%= tracklist[trackNumber].genres.join(', ') %></td>
+            <td><%= tracklist[trackNumber].genre.name %></td>
           </tr>
         <% } %>
       </table>
